@@ -14,8 +14,6 @@ base64_string = base64.b64encode(bytes_data).decode()
 
 print(base64_string)
 
-
-
 def fixed_xor(hex1, hex2):
     bytes1 = bytes.fromhex(hex1)
     bytes2 = bytes.fromhex(hex2)
