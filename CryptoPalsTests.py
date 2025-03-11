@@ -6,27 +6,14 @@ Created on Tue Mar 11 12:32:34 2025
 @author: brooklynndominguez
 """
 
-import base64
- import binascii
+import unittest
+import Cryptopals
+input_str = "49276d206b696c6c696e6720796f757220627261696e206c696b65206120706f69736f6e6f7573206d757368726f6f6d";
+final_str = "SSdtIGtpbGxpbmcgeW91ciBicmFpbiBsaWtlIGEgcG9pc29ub3VzIG11c2hyb29t"
  
- hex_string = "49276d206b696c6c696e6720796f757220627261696e206c696b65206120706f69736f6e6f7573206d757368726f6f6d"
- bytes_data = bytes.fromhex(hex_string) 
- base64_string = base64.b64encode(bytes_data).decode()  
+class Test(unittest.TestCase):
+    def test_hex2byte(self):
+         self.assertEqual(Cryptopals.hex2byte(input_str), bytes.fromhex(input_str));
  
- print(base64_string)
- 
- 
- 
- def fixed_xor(hex1, hex2):
-     bytes1 = bytes.fromhex(hex1)
-     bytes2 = bytes.fromhex(hex2)
-     
-     xored_bytes = bytes(a ^ b for a, b in zip(bytes1, bytes2))
-     
-     return xored_bytes.hex()
- 
- hex_string1 = "1c0111001f010100061a024b53535009181c"
- hex_string2 = "686974207468652062756c6c277320657965"
- 
- result = fixed_xor(hex_string1, hex_string2)
- print(result)
+if __name__ == "__main__":
+     unittest.main()
