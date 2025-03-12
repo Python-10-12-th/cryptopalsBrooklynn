@@ -6,6 +6,12 @@ Created on Mon Mar 10 14:52:25 2025
 @author: brooklynndominguez
 """
 
+import base64
+
+def hex_to_base64(h):
+    byte_str = bytes.fromhex(h)
+    return base64.b64encode(byte_str).decode()
+
 def hex2bin(h):
     bin_out = ""
     for i in bytes.fromhex(h):
@@ -13,7 +19,7 @@ def hex2bin(h):
         print(bin_out)
     print(bin_out)
     return bin_out
-import base64
+
  
 hex_string = "49276d206b696c6c696e6720796f757220627261696e206c696b65206120706f69736f6e6f7573206d757368726f6f6d"
 bytes_data = bytes.fromhex(hex_string) 
