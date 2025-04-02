@@ -16,7 +16,9 @@ class Test(unittest.TestCase):
        input_str = "49276d206b696c6c696e6720796f757220627261696e206c696b65206120706f69736f6e6f7573206d757368726f6f6d"
        expected_output = bytes.fromhex(input_str)
        self.assertEqual(Cryptopals.hex2byte(input_str), expected_output)
-         
+    def test_hex2byte_empty_string(self):
+            self.assertEqual(Cryptopals.hex2byte(""), b"")
+       
  
 if __name__ == "__main__":
      unittest.main()
