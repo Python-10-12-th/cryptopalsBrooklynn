@@ -22,6 +22,10 @@ class Test(unittest.TestCase):
     def test_hex2byte_invalid_hex(self):
         with self.assertRaises(ValueError): 
             Cryptopals.hex2byte("ZZZ")
+    
+    def test_hex2byte_odd_length(self):
+        with self.assertRaises(ValueError):  
+            Cryptopals.hex2byte("123")
  
 if __name__ == "__main__":
      unittest.main()
