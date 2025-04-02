@@ -18,7 +18,10 @@ class Test(unittest.TestCase):
        self.assertEqual(Cryptopals.hex2byte(input_str), expected_output)
     def test_hex2byte_empty_string(self):
             self.assertEqual(Cryptopals.hex2byte(""), b"")
-       
+    
+    def test_hex2byte_invalid_hex(self):
+        with self.assertRaises(ValueError): 
+            Cryptopals.hex2byte("ZZZ")
  
 if __name__ == "__main__":
      unittest.main()
